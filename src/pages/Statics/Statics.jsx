@@ -9,12 +9,12 @@ const Statics = () => {
   const {data:DontationChart}=UseDontation()
   const{localData}=UseLocalStorage()
   const data = [
-    { name: 'Group A', value:DontationChart.length },
+    { name: 'Group A', value:localData.length },
 
-    { name: 'Group D', value: 200 },
+    { name: 'Group D', value:DontationChart.length},
   ];
   
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+  const COLORS = ['#ff444a32', '#00C49F', '#b84afd4e', '#b84afd4e'];
   const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -40,8 +40,8 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
         cy="50%"
         labelLine={false}
         label={renderCustomizedLabel}
-        outerRadius={80}
-        fill="#8884d8"
+        outerRadius={300}
+        fill="#fb5200"
         dataKey="value"
       >
         {data.map((entry, index) => (
