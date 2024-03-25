@@ -6,19 +6,24 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
  
 function NavList() {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className=" my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-medium font-semibold"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-        Home
-        </a>
+
+      <Link to='/'>
+      <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+Home
+      </a>
+      </Link>
+       
       </Typography>
       <Typography
         as="li"
@@ -26,9 +31,12 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium font-semibold"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-        Dontation
-        </a>
+   <Link to='/donation'>
+   
+   <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+   Dontation
+   </a>
+   </Link> 
       </Typography>
       <Typography
         as="li"
@@ -36,9 +44,12 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium font-semibold"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-      Statistics
-        </a>
+   <Link to='/statics'>
+   
+   <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+   Statistics
+     </a>
+   </Link>
       </Typography>
   
     </ul>
@@ -60,7 +71,7 @@ export function NavbarSimple() {
   }, []);
  
   return (
-    <Navbar className="mx-auto max-w-screen-2xl px-6 py-3">
+    <Navbar className="mx-auto max-w-screen-2xl px-6 py-3  mb-8">
       <div className="flex items-center justify-between text-blue-gray-900">
  <div>
  <img src="/public/resource/Logo (2).png" alt="Logo" />
