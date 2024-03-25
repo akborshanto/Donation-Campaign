@@ -6,7 +6,8 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
+import { CustomSpinner } from './../../../../CustomSppiner/CustomSpinner';
  
 function NavList() {
   return (
@@ -15,41 +16,42 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium font-semibold"
+        className="p-1 font-medium font-semibold text-2xl"
       >
 
-      <Link to='/'>
+      <NavLink to='/'   className={({isActive,isPending})=> isActive? " text-red-500 text-2xl transition-shadow":<CustomSpinner></CustomSpinner>}>
       <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
 Home
       </a>
-      </Link>
+      </NavLink>
        
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium font-semibold"
+        className="p-1 font-medium font-semibold text-xl"
+      
       >
-   <Link to='/donation'>
+   <NavLink to='/donation' className={({isActive,isPending})=> isActive? " text-red-500 text-2xl transition-shadow":<CustomSpinner></CustomSpinner>}>
    
-   <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+   <a href="#" className="flex items-center hover:text-blue-500 transition-colors text-2xl">
    Dontation
    </a>
-   </Link> 
+   </NavLink> 
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium font-semibold"
+        className="p-1 font-medium font-semibold text-xl"
       >
-   <Link to='/statics'>
+   <NavLink to='/statics' className={({isActive,isPending})=> isActive? " text-red-500 text-2xl transition-shadow":<CustomSpinner></CustomSpinner>}>
    
    <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
    Statistics
      </a>
-   </Link>
+   </NavLink>
       </Typography>
   
     </ul>

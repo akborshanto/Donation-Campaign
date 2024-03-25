@@ -14,6 +14,7 @@ import {
 import { Button } from '@material-tailwind/react'
 import UseDontation from './../../Hoook/UseDontation';
 import { saveStored } from '../../utils/LocalStorage';
+import { CustomSpinner } from '../../CustomSppiner/CustomSpinner';
 
 const DonationDetails = () => {
     /* singleData */
@@ -42,6 +43,11 @@ const handleDonate=()=>{
 saveStored(singleData)
   
  }
+/* loading sppiner */
+if(loading){
+  return <CustomSpinner></CustomSpinner>
+}
+
   return (
     <div>
     <Card className="w-full overflow-hidden">
